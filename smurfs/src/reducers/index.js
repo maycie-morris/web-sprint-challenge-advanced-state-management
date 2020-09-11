@@ -6,7 +6,6 @@ const initialState = {
     isFetching: false,
     error: '',
     updated: false
-
 }
 
 export const reducer = (state = initialState, action) => {
@@ -33,20 +32,19 @@ export const reducer = (state = initialState, action) => {
                 ...state,
                 isFetching: false,
                 error: action.payload,
-                updated: false
+                updated: false,
             }
         case ADD_SMURF:
             return {
-                ...state
+                ...state,
+                // smurfData: action.payload,
+                // isFetching: false
             }
-        // case ADD_SMURF_SUCCESS:
-        //     return {
-        //         ...state,
-        //         smurfData: action.payload,
-        //         isFetching: false,
-        //         error: '',
-        //         updated: false
-        //     }
+        case ADD_SMURF_SUCCESS:
+            return {
+                ...state,
+                updated: true
+            }
         // case ADD_SMURF_ERROR:
         //     return {
         //         ...state,
